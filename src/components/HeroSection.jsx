@@ -1,10 +1,15 @@
-import React from "react";
+import React, { use } from "react";
+import { useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
   const [input, setInput] = React.useState("");
+  const navigate = useNavigate();
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
+    if (input.trim() !== "") {
+      navigate(`/marketplace?search=${encodeURIComponent(input.trim())}`);
+    }
   };
 
   return (
