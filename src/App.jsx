@@ -45,7 +45,7 @@ const App = () => {
         <Route path="/aboutus" element={<AboutUs />} />
 
         {/* Listings */}
-        <Route path="/mylisting" element={<MyListing />} />
+        <Route path="/mylistings" element={<MyListing />} />
         <Route path="/createlisting" element={<ManageListing />} />
         <Route path="/editlisting/:listingId" element={<ManageListing />} />
         <Route path="/listing/:listingId" element={<ListingDetails />} />

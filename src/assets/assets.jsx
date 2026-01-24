@@ -29,6 +29,18 @@ export const socialMediaLinks = {
   discord: "https://discord.com/users",
 };
 
+export const ageRanges = [
+  { value: "13-17", label: "13-17 (Teens)" },
+  { value: "18-24", label: "18-24 (Young Adults)" },
+  { value: "25-34", label: "25-34" },
+  { value: "35-44", label: "35-44" },
+  { value: "45-54", label: "45-54" },
+  { value: "55-64", label: "55-64" },
+  { value: "65-74", label: "65-74" },
+  { value: "75+", label: "75+" },
+  { value: "mixed", label: "Mixed / All Ages" },
+];
+
 //   PROFILE LINK BUILDER
 
 export function getProfileLink(platform, username) {
@@ -548,8 +560,8 @@ export const dummyListings = [
     platformAssured: true,
     owner: dummyUsers[2],
     isCredentialSubmitted: false,
-    isCredentialVerified: false,
-    isCredentialChanged: false,
+    isCredentialVerified: true,
+    isCredentialChanged: true,
     createdAt: "2025-11-21T18:40:22.000Z",
     updatedAt: "2025-11-21T18:45:55.000Z",
   },
@@ -718,7 +730,7 @@ export const dummyListings = [
     monetized: true,
     country: "Trinidad & Tobago",
     age_range: "18-34",
-    status: "active",
+    status: "sold",
     featured: true,
     images: [image_1, image_2, image_3],
     platformAssured: true,

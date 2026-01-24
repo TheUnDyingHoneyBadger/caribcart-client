@@ -4,6 +4,7 @@ import { LoaderCircle, MessageCircle, Search } from "lucide-react";
 import { getDateLabel } from "../lib/utils";
 import { useDispatch } from "react-redux";
 import { setChat } from "../app/features/chatSlice";
+import { Link } from "react-router-dom";
 
 const Messages = () => {
   const user = { id: "user_6" };
@@ -124,19 +125,23 @@ const Messages = () => {
                 chat.isLastMessageSenderId !== user?.id;
 
               return (
-                <button
+                <div
                   onClick={() => handleOpenChat(chat)}
-                  key={chat.id}
-                  className="w-full text-left hover:bg-gray-100 transition-colors"
+                  className="w-full text-left hover:bg-gray-100 transition-colors cursor-pointer"
                 >
                   <div className="p-4 flex items-start space-x-4">
                     {/* avatar */}
-                    <div className="w-12 h-12 rounded-full overflow-hidden shrink-0">
-                      <img
-                        src={chatUser?.image}
-                        alt={chatUser?.name}
-                        className="w-full h-full object-cover"
-                      />
+                    <div
+                      className="w-12 h-12 rounded-full overflow-hidden shrink-0"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Link to={`/listing/${chat.listing.id}`}>
+                        <img
+                          src={chatUser?.image}
+                          alt={chatUser?.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </Link>
                     </div>
 
                     {/* content */}
@@ -167,7 +172,7 @@ const Messages = () => {
                       </p>
                     </div>
                   </div>
-                </button>
+                </div>
               );
             })}
           </div>
