@@ -93,7 +93,8 @@ const HeroSection = () => {
         </h1>
 
         <p className="max-w-xl text-center text-base my-7 text-gray-700">
-          Connect, trade, and purchase profiles in a safe, hassle free environment.
+          Connect, trade, and purchase profiles in a safe, hassle free
+          environment.
         </p>
 
         {/* Search Box */}
